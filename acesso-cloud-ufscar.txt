@@ -1,0 +1,18 @@
+Acessar Cloud Ufscar IP: 200.136.252.136
+
+Passos:
+
+1-Acessar pasta /slice-enablers/arquivos na área de trabalho local
+
+2-usar o comando abaixo para acessar cloud ufscar:
+	ssh -i cloud_ufscar_rsa.dms ubuntu@200.136.252.136
+
+3-Acessar pasta /slice-enablers/arquivos na cloud (ubuntu@master) e acessar VM do grupo 2:
+	sh acessar.sh 2
+
+4-Copiar conteúdo do Vagrantfile que está na área de trabalho local para o Vagrantfile da VM
+
+
+//Iniciar Docker Swarm na vmmaster:
+//sudo docker swarm init --advertise-addr 192.168.50.10:2377
+
