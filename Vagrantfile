@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
   	vmmaster.vm.network "private_network", ip: "192.168.50.10"
 	vmmaster.vm.hostname = "vmmaster"
   	vmmaster.vm.provider "virtualbox" do |vb|
-      		vb.memory = "4096"
+      		vb.memory = "1024"
     	  	vb.name = "vmmaster"
   	end
 	vmmaster.vm.provision "shell", inline: <<-SHELL
@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
 		git clone https://github.com/RenatoAr/docker-appserver.git
 		cd docker-appserver
 		sudo docker build -t docker-appserver .
-		sudo docker run -p 5000:5000 --name docker-appserver docker-appserver
+		sudo docker run -d -p 5000:5000 --name docker-appserver docker-appserver
 	SHELL
   end
   config.vm.define "vmworker" do |vmworker|
@@ -32,7 +32,7 @@ Vagrant.configure(2) do |config|
   	vmworker.vm.network "private_network", ip: "192.168.50.20"
 	vmworker.vm.hostname = "vmworker"
   	vmworker.vm.provider "virtualbox" do |vb|
-      		vb.memory = "2048"
+      		vb.memory = "512"
     	  	vb.name = "vmworker"
   	end
 	vmworker.vm.provision "shell", inline: <<-SHELL
