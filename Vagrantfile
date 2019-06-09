@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
 		git clone https://github.com/RenatoAr/docker-appserver.git
 		cd docker-appserver
 		sudo docker build -t docker-appserver .
-		sudo docker run -p 5000:5000 -it --name docker-appserver docker-appserver
+		sudo docker run -p 5000:5000 --name docker-appserver docker-appserver
 	SHELL
   end
   config.vm.define "vmworker" do |vmworker|
