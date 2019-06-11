@@ -1,20 +1,33 @@
 # vagrant-docker-project
+-Vagrant & Docker
+
 Trabalho prático da disciplina de Tópicos Avançados em Redes de Computadores e Sistemas Distribuidos. UFScar Sorocaba
 
 CONFIGURAÇÃO
 
-1-No diretório do Vagrantfile digitar o comando:
-$ vagrant up
+1-Executar o comando abaixo e acessar pasta /slice-enablers/arquivos
+	https://github.com/dcomp-leris/slice-enablers.git
 
-2-Acessar antes a VM Master para pegar o token para poder adicionar worker com o comando abaixo (Descobrir como fazer isso direto pelo Vagrantfile):
-$ vagrant ssh vmmaster
-$ sudo docker swarm join-token worker
+2-Usar os comandos abaixo para acessar cloud ufscar
+	chmod 400 arquivos/cloud_ufscar_rsa.dms
+	ssh -i cloud_ufscar_rsa.dms ubuntu@200.136.252.136
 
-Copiar o comando que apareceu, acessar VM Worker:
-$ vagrant ssh vmworker
+3-Já na cloud ufscar (ubuntu@master) acessar pasta abaixo e acessar VM do grupo 2
+	cd slice-enablers/arquivos
+	sh acessar.sh 2
 
-Colar o comando com pre-fixo sudo.
+4-Baixar o projeto pelo comando abaixo e acessar pasta 
+	git clone https://github.com/RenatoAr/vagrant-docker-project.git
+	cd vagrant-docker-project
 
-4-Entrar novamente na VM Master e digitar o comando abaixo
-sudo docker service create --name webservice1 --network ClusterNet --replicas 2 -p 5000:80 renatoar/docker-example
+5-Subir as máquinas virtuais já com as aplicações configuradas pelo comando abaixo: 
+	vagrant up
 
+Testes:
+
+1-Acessar a vmworker com o comando abaixo
+	vagrant ssh vmworker
+
+2-Testar as aplicações com os comandos abaixo:
+	curl localhost:5000/GET_INFO
+	curl -X POST localhost:5000/POST_INFO

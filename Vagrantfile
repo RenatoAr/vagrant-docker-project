@@ -46,10 +46,7 @@ Vagrant.configure(2) do |config|
 		git clone https://github.com/RenatoAr/docker-appclient.git
 		cd docker-appclient
 		sudo docker build -t docker-appclient .
-		#sudo docker run -d -p 5000:5000 -v /var/run/docker.sock:/var/run/docker.sock --name docker-appclient docker-appclient
-		#sudo docker exec -it docker-appclient sh
-		#apk add docker
-
+		sudo docker run -d -p 5000:5000 -v /var/run/docker.sock:/var/run/docker.sock --name docker-appclient docker-appclient
 	SHELL
   end
 end
