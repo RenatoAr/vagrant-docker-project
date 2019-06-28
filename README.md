@@ -1,9 +1,9 @@
 # vagrant-docker-project
--Vagrant & Docker
+# -Vagrant & Docker
 
 Trabalho prático da disciplina de Tópicos Avançados em Redes de Computadores e Sistemas Distribuidos. UFScar Sorocaba
 
-CONFIGURAÇÃO (Se for montar as VMs localmente, a partir do passo 4)
+# Como usar (Se for montar as VMs localmente, ir para o passo 4)
 
 1-Executar o comando abaixo e acessar pasta /slice-enablers/arquivos
 	https://github.com/dcomp-leris/slice-enablers.git
