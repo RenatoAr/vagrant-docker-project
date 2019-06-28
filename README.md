@@ -1,5 +1,4 @@
-# vagrant-docker-project
-# -Vagrant & Docker
+# Vagrant & Docker
 
 Trabalho prático da disciplina de Tópicos Avançados em Redes de Computadores e Sistemas Distribuidos. UFScar Sorocaba
 
